@@ -176,7 +176,7 @@ export default function HomePage() {
               <ScanLine className="h-7 w-7 text-primary-800" />
               <h2 className="mt-5 text-3xl font-semibold">Team preview</h2>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {team.slice(0, 2).map((member) => (
+                {team.map((member) => (
                   <div key={member.name} className="rounded-2xl bg-[#f6f2e7] p-4">
                     <p className="font-semibold">{member.name}</p>
                     <p className="mt-1 text-sm text-slate-600">{member.role}</p>
