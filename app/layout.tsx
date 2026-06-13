@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import { ThemeProvider } from '@/components/ui/theme-provider'
 
 export const metadata: Metadata = {
-  title: 'CropIntel - AI-Powered Crop Disease Intelligence',
-  description: 'AI-assisted crop disease detection, guidance, and outbreak monitoring for growers and agricultural operators.',
+  title: 'CropIntel - Agricultural Intelligence',
+  description: 'CropIntel is an agricultural intelligence company building practical mobile tools for crop health and field decision support.',
 }
 
 export const viewport: Viewport = {
@@ -20,17 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   )
 }

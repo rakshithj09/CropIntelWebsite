@@ -28,22 +28,3 @@ yarn-error.log*
 
 # Vercel
 .vercel
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-.venv
-
-# ML specific
-ml/models/
-ml/data/
-uploads/
-*.h5
-*.keras
-*.tflite

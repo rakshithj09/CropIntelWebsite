@@ -1,1 +1,0 @@
-"""CropIntel ML Pipeline"""
