@@ -140,24 +140,32 @@ export const values = [
 
 export const team = [
   {
-    name: 'Founding Team',
-    role: 'Company leadership',
-    bio: 'Guides CropIntel’s product direction, field partnerships, and long-term agricultural intelligence roadmap.',
+    name: 'Jaithra Polavarapu',
+    role: 'Product & Engineering Lead',
+    bio: 'Guiding CropIntel’s product direction and technical execution, Jaithra helps shape the disease detection workflow, automation strategy, and real-world presentation of the platform. A senior at Bentonville West High School and an Ignite Professional Studies Technology student, he brings Walmart Global Tech externship experience in automation and vulnerability management along with web administration work to building practical tools with real agricultural impact.',
+    linkedin: 'https://www.linkedin.com/in/jaithra-polavarapu/',
+    image: '/team/jaithra-polavarapu.jpeg',
   },
   {
-    name: 'Product & Engineering',
-    role: 'Mobile and platform development',
-    bio: 'Builds the CropIntel app experience, image workflow, crop guidance surfaces, and release infrastructure.',
+    name: 'Rakshith Jayakarthikeyan',
+    role: 'Operations & Strategy Lead',
+    bio: 'Keeping the team organized and focused, Rakshith supports CropIntel through project planning, communication, execution, and presentation readiness. A senior at Bentonville West High School and an Ignite Technology student, he brings experience from the International Walmart Global Technology team, academic tutoring, athletics, and community leadership to help the team move from idea to polished product.',
+    linkedin: 'https://www.linkedin.com/in/rakshith-jayakarthikeyan/',
+    image: '/team/rakshith-jayakarthikeyan.jpg',
   },
   {
-    name: 'Crop Intelligence',
-    role: 'Model and agronomy workflow',
-    bio: 'Focuses on crop-specific disease context, AI-assisted analysis, treatment guidance, and result interpretation.',
+    name: 'Aditya Ramani',
+    role: 'AI Systems Researcher',
+    bio: 'Connecting computer science research with product logic, Aditya contributes to CropIntel’s engineering decisions, AI workflow thinking, and system optimization. A senior at Bentonville High School and an Ignite Technology student, he brings experience from debate, volunteer work, and a Salesforce ROI Strategy internship at Arvest Bank to help approach technical problems with structure and analysis.',
+    linkedin: 'https://www.linkedin.com/in/aditya-ramani-3b7373383/',
+    image: '/team/aditya-ramani.jpeg',
   },
   {
-    name: 'Field Partnerships',
-    role: 'Grower and advisor relationships',
-    bio: 'Connects product development to real scouting needs, regional pressure tracking, and operator feedback.',
+    name: 'Havish Kunchanapalli',
+    role: 'AI/ML & App Developer',
+    bio: 'Building across the model and application layers, Havish works on CropIntel’s disease detection, AI/ML direction, and alert workflows that turn field observations into shared risk signals. A senior at Bentonville West High School and an Ignite Technology student, he brings Walmart Global Tech SMO externship experience along with a strong background in AI/ML, physics, and web/app development.',
+    linkedin: 'https://www.linkedin.com/in/havish-kunchanapalli-9b24a9293/',
+    image: '/team/havish-kunchanapalli.jpeg',
   },
 ]
 
