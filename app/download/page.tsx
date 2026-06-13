@@ -1,10 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import {
   Apple,
   ArrowRight,
   Bell,
-  CheckCircle2,
   Clock3,
   Mail,
   MapPinned,
@@ -81,64 +79,70 @@ export default function DownloadPage() {
               </div>
             </div>
 
-            <div className="field-card overflow-hidden bg-[#19351f] text-white">
-              <div className="grid gap-8 p-7 sm:grid-cols-[.8fr_1.2fr] sm:p-8">
-                <div className="mx-auto w-full max-w-[220px] rounded-[2rem] border border-white/25 bg-[#f7f3e8] p-3 shadow-2xl">
-                  <div className="min-h-[390px] rounded-[1.5rem] bg-[#223c26] p-5 text-white">
-                    <div className="mx-auto h-1.5 w-16 rounded-full bg-white/25" />
-                    <div className="mt-10 flex justify-center">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-white">
-                        <Image src="/brand/mark.png" alt="CropIntel" width={54} height={54} />
+            <div className="min-w-0 overflow-hidden rounded-[1.25rem] border border-primary-900/15 bg-[#16351f] text-white shadow-xl shadow-primary-950/10">
+              <div className="mx-auto grid min-w-0 max-w-[760px] items-center justify-center gap-8 p-6 sm:p-8 xl:grid-cols-[210px_minmax(0,430px)] xl:gap-10">
+                <div className="mx-auto flex w-full max-w-[190px] justify-center">
+                  <div className="w-full rounded-[2rem] border border-white/12 bg-[#0f2516] p-2 shadow-2xl shadow-black/25">
+                    <div className="min-h-[305px] rounded-[1.55rem] border border-white/10 bg-[#1e4228] p-4 text-white">
+                      <div className="mx-auto h-1.5 w-14 rounded-full bg-white/35" />
+                      <div className="mt-8">
+                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e1bd6e]">iOS preview</p>
+                        <div className="mt-3 h-2 w-24 rounded-full bg-white/60" />
+                        <div className="mt-2 h-2 w-16 rounded-full bg-white/25" />
                       </div>
-                    </div>
-                    <p className="mt-8 text-center text-xs font-bold uppercase tracking-[0.2em] text-[#d9b15f]">
-                      CropIntel
-                    </p>
-                    <h2 className="mt-3 text-center text-2xl font-semibold">iOS preview</h2>
-                    <div className="mt-8 space-y-3">
-                      <div className="rounded-2xl bg-white/10 p-4">
-                        <div className="h-2 w-20 rounded-full bg-white/50" />
-                        <div className="mt-3 h-2 rounded-full bg-white/25" />
-                        <div className="mt-2 h-2 w-3/4 rounded-full bg-white/20" />
+                      <div className="mt-7 space-y-3">
+                        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.11] p-3.5">
+                          <div className="h-2 w-20 rounded-full bg-white/55" />
+                          <div className="mt-3 h-2 rounded-full bg-white/25" />
+                          <div className="mt-2 h-2 w-3/4 rounded-full bg-white/20" />
+                        </div>
+                        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.08] p-3.5">
+                          <div className="h-2 w-24 rounded-full bg-white/45" />
+                          <div className="mt-3 h-2 w-2/3 rounded-full bg-white/20" />
+                        </div>
                       </div>
-                      <div className="rounded-2xl bg-white/10 p-4">
-                        <div className="h-2 w-24 rounded-full bg-white/45" />
-                        <div className="mt-3 h-2 w-2/3 rounded-full bg-white/20" />
+                      <div className="mt-5 rounded-2xl bg-[#f7f3e8] p-3">
+                        <div className="h-2 w-16 rounded-full bg-[#789174]" />
+                        <div className="mt-2 h-2 rounded-full bg-[#b9c5b2]" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center">
-                  <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#d9b15f]">Download status</p>
-                  <h2 className="mt-4 text-3xl font-semibold tracking-tight">Not live on the App Store yet</h2>
-                  <p className="mt-4 text-sm leading-6 text-white/70">
-                    The App Store badge is intentionally disabled until the listing is available. Check back here for the
-                    official download link.
+                <div className="mx-auto min-w-0 max-w-[430px] py-1">
+                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#e1bd6e]/30 bg-[#e1bd6e]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#e1bd6e]">
+                    <Clock3 className="h-3.5 w-3.5" />
+                    Release pending
+                  </div>
+                  <h2 className="mt-5 max-w-sm text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                    Official iOS download coming soon
+                  </h2>
+                  <p className="mt-4 max-w-sm text-sm leading-6 text-white/[0.72]">
+                    CropIntel is being prepared for App Store publication. The official badge will activate here once
+                    the listing is approved.
                   </p>
 
                   <button
                     type="button"
                     disabled
-                    className="mt-7 inline-flex min-h-[58px] w-full max-w-sm cursor-not-allowed items-center justify-center gap-3 rounded-2xl bg-white/15 px-5 py-3 text-left text-white/50 ring-1 ring-white/15"
+                    className="mt-6 inline-flex min-h-[58px] w-full max-w-[300px] cursor-not-allowed items-center justify-center gap-3 rounded-[1rem] border border-white/15 bg-[#f7f3e8] px-5 py-3 text-left text-[#19351f] opacity-90 shadow-sm"
+                    aria-label="Coming soon on the App Store"
                   >
                     <Apple className="h-7 w-7" />
                     <span>
-                      <span className="block text-xs">Coming soon on the</span>
+                      <span className="block text-xs font-semibold text-[#61705f]">Coming soon on the</span>
                       <span className="block text-xl font-semibold leading-6">App Store</span>
                     </span>
                   </button>
 
-                  <div className="mt-7 grid gap-3">
-                    <div className="flex gap-3 rounded-2xl border border-white/10 bg-white/10 p-4">
-                      <Bell className="mt-0.5 h-5 w-5 shrink-0 text-[#d9b15f]" />
-                      <p className="text-sm leading-6 text-white/70">
-                        Launch updates are handled by email while the listing is pending.
-                      </p>
+                  <div className="mt-5 grid min-w-0 gap-3">
+                    <div className="flex items-start gap-3 rounded-[1rem] border border-white/10 bg-white/[0.06] p-4">
+                      <Bell className="mt-0.5 h-5 w-5 shrink-0 text-[#e1bd6e]" />
+                      <p className="text-sm leading-6 text-white/[0.72]">Launch updates are handled by email.</p>
                     </div>
-                    <div className="flex gap-3 rounded-2xl border border-white/10 bg-white/10 p-4">
-                      <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[#d9b15f]" />
-                      <p className="text-sm leading-6 text-white/70">{company.contactEmail}</p>
+                    <div className="flex items-start gap-3 rounded-[1rem] border border-white/10 bg-white/[0.06] p-4">
+                      <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[#e1bd6e]" />
+                      <p className="break-all text-sm leading-6 text-white/[0.72]">{company.contactEmail}</p>
                     </div>
                   </div>
                 </div>
