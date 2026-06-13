@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": ["**/*.tsx", "**/*.ts", "**/*.jsx", "**/*.js"],
+      "rules": {
+        "@next/next/no-img-element": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide Google Maps "For development purposes only" watermark */
+.gm-style-cc,
+.gm-style-cc div,
+.gm-style-cc a,
+a[href^="https://developers.google.com/maps"],
+.gm-bundled-control .gm-style-cc,
+div[title*="For development purposes only"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* Hide Google Maps default POI marker images only (scope to .gm-style — unscoped img rules break non-map UI) */
+.gm-style img[src*="poi"],
+.gm-style img[src*="place"],
+.gm-style img[src*="marker"][src*="default"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+* {
+  @apply antialiased;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(112, 152, 112, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 90% 10%, rgba(120, 160, 120, 0.16), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #f1f5f9 100%);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Ensure images display correctly */
+img {
+  display: block !important;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Prevent images from showing as broken icons */
+img[src=""],
+img:not([src]) {
+  display: none !important;
+}
+
+/* Ensure image containers don't collapse */
+.image-container,
+[class*="image"] {
+  min-height: 100px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-blue-600;
+  }
+
+  .surface {
+    @apply bg-white border border-slate-200/80 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-primary-800 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-400;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-800 shadow-sm transition hover:border-primary-700 hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2;
+  }
+
+  .field-card {
+    @apply rounded-[1.25rem] border border-stone-200 bg-white/85 shadow-sm;
+  }
+
+  .field-band {
+    background:
+      linear-gradient(180deg, rgba(249, 247, 239, 0.95), rgba(249, 247, 239, 0.98)),
+      repeating-linear-gradient(105deg, rgba(56, 84, 56, 0.12) 0 1px, transparent 1px 22px);
+  }
+}
