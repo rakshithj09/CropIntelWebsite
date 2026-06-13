@@ -18,6 +18,14 @@ const devOriginsFromEnv = (process.env.NEXT_DEV_ALLOWED_ORIGINS || '')
 
 const nextConfig = {
   reactStrictMode: true,
+  ...(process.env.NEXT_OUTPUT_EXPORT === 'true'
+    ? {
+        output: 'export',
+        images: {
+          unoptimized: true,
+        },
+      }
+    : {}),
 
   // Only set when you opt in — avoids blocking when your LAN IP ≠ a hardcoded value.
   ...(devOriginsFromEnv.length > 0

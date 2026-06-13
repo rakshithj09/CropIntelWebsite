@@ -6,7 +6,7 @@ function contentSecurityPolicy(): string {
     "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob:",
-    "connect-src 'self' https://api.resend.com",
+    "connect-src 'self'",
     "font-src 'self' data:",
     "frame-src 'none'",
     "worker-src 'self' blob:",

@@ -1,14 +1,14 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react'
+import { CheckCircle2, Send } from 'lucide-react'
+import { company } from '@/lib/siteContent'
 
 type FormState = {
   name: string
   email: string
   subject: string
   message: string
-  website: string
 }
 
 const initialFormState: FormState = {
@@ -16,7 +16,6 @@ const initialFormState: FormState = {
   email: '',
   subject: '',
   message: '',
-  website: '',
 }
 
 function isValidEmail(email: string) {
@@ -25,16 +24,13 @@ function isValidEmail(email: string) {
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialFormState)
-  const [submitting, setSubmitting] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof FormState, string>>>({})
 
   function updateField(field: keyof FormState, value: string) {
     setForm((current) => ({ ...current, [field]: value }))
     setFieldErrors((current) => ({ ...current, [field]: undefined }))
     setSuccessMessage('')
-    setErrorMessage('')
   }
 
   function validateForm() {
@@ -62,43 +58,27 @@ export default function ContactForm() {
     return Object.keys(nextErrors).length === 0
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setSuccessMessage('')
-    setErrorMessage('')
 
     if (!validateForm()) return
 
-    setSubmitting(true)
+    const body = [
+      `Name: ${form.name.trim()}`,
+      `Email: ${form.email.trim()}`,
+      '',
+      form.message.trim(),
+    ].join('\n')
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email.trim(),
-          subject: form.subject.trim(),
-          message: form.message.trim(),
-          website: form.website,
-        }),
-      })
+    const mailtoUrl = `mailto:${company.contactEmail}?subject=${encodeURIComponent(
+      form.subject.trim()
+    )}&body=${encodeURIComponent(body)}`
 
-      if (!response.ok) {
-        throw new Error('Contact form submission failed.')
-      }
-
-      setForm(initialFormState)
-      setFieldErrors({})
-      setSuccessMessage('Thank you for contacting CropIntel. We will get back to you soon.')
-    } catch (error) {
-      console.error('Contact form submission failed:', error)
-      setErrorMessage('We could not send your message right now. Please try again later.')
-    } finally {
-      setSubmitting(false)
-    }
+    window.location.href = mailtoUrl
+    setForm(initialFormState)
+    setFieldErrors({})
+    setSuccessMessage('Your email app should open with the message ready to send.')
   }
 
   return (
@@ -110,17 +90,6 @@ export default function ContactForm() {
       <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
         Use the form below for launch updates, partnerships, grower feedback, and general company questions.
       </p>
-
-      <input
-        value={form.website}
-        onChange={(event) => updateField('website', event.target.value)}
-        className="hidden"
-        type="text"
-        name="website"
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-      />
 
       <div className="mt-7 grid gap-5 sm:grid-cols-2">
         <label className="block">
@@ -185,16 +154,9 @@ export default function ContactForm() {
         </div>
       )}
 
-      {errorMessage && (
-        <div className="mt-5 flex gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-          <span>{errorMessage}</span>
-        </div>
-      )}
-
-      <button type="submit" disabled={submitting} className="btn-primary mt-6 w-full sm:w-auto">
-        {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-        {submitting ? 'Sending message' : 'Send message'}
+      <button type="submit" className="btn-primary mt-6 w-full sm:w-auto">
+        <Send className="h-4 w-4" />
+        Prepare email
       </button>
     </form>
   )
