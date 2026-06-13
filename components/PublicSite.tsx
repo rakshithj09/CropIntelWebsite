@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Menu } from 'lucide-react'
 import { company, footerColumns, navLinks } from '@/lib/siteContent'
 
 export function BrandMark({ inverse = false }: { inverse?: boolean }) {
@@ -44,19 +43,6 @@ export function PublicHeader() {
             </Link>
           ))}
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
-          <Link href="/download" className="btn-primary">
-            Download
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <Link
-          href="/download"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white text-slate-800 md:hidden"
-          aria-label="Open download page"
-        >
-          <Menu className="h-5 w-5" />
-        </Link>
       </div>
     </header>
   )
