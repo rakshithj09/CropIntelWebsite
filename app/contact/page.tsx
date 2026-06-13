@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, Mail, MapPin } from 'lucide-react'
 import { PageShell } from '@/components/PublicSite'
 import { company } from '@/lib/siteContent'
 
@@ -23,7 +23,6 @@ export default function ContactPage() {
           <div className="space-y-4">
             {[
               { icon: Mail, label: 'Email', value: company.contactEmail },
-              { icon: Phone, label: 'Phone', value: company.contactPhone },
               { icon: MapPin, label: 'Location', value: company.location },
             ].map(({ icon: Icon, label, value }) => (
               <div key={label} className="field-card flex gap-4 p-5">
@@ -36,26 +35,20 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <form className="field-card p-7">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-semibold text-slate-800">Name</span>
-                <input className="mt-2 w-full rounded-2xl border border-stone-300 px-4 py-3 text-sm outline-none focus:border-primary-700" />
-              </label>
-              <label className="block">
-                <span className="text-sm font-semibold text-slate-800">Email</span>
-                <input type="email" className="mt-2 w-full rounded-2xl border border-stone-300 px-4 py-3 text-sm outline-none focus:border-primary-700" />
-              </label>
-            </div>
-            <label className="mt-4 block">
-              <span className="text-sm font-semibold text-slate-800">Message</span>
-              <textarea rows={6} className="mt-2 w-full rounded-2xl border border-stone-300 px-4 py-3 text-sm outline-none focus:border-primary-700" />
-            </label>
-            <Link href="mailto:hello@cropintel.ai" className="btn-primary mt-5">
-              Send message
+          <div className="field-card p-7">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary-800">General inquiries</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
+              For launch updates, partnerships, and product questions
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
+              Email the CropIntel team and include what you are interested in: App Store availability, grower feedback,
+              field partnerships, or general company information.
+            </p>
+            <Link href={`mailto:${company.contactEmail}`} className="btn-primary mt-7">
+              Email CropIntel
               <ArrowRight className="h-4 w-4" />
             </Link>
-          </form>
+          </div>
         </section>
       </main>
     </PageShell>

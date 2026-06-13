@@ -15,22 +15,22 @@ export default function ProductPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
               CropIntel brings image-based disease prediction, treatment guidance, outbreak reporting, history, and
-              regional context into a protected app experience.
+              regional context into a mobile-first product experience.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/signup" className="btn-primary">
-                Create account
+              <Link href="/download" className="btn-primary">
+                Download app
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/app" className="btn-secondary">
-                Open app
+              <Link href="/contact" className="btn-secondary">
+                Contact us
               </Link>
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <SectionHeader title="What the platform includes" text="The public site now surrounds the existing diagnosis product without replacing it." />
+          <SectionHeader title="What the platform includes" text="This company website introduces the CropIntel platform while the iOS app is prepared for App Store release." />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {productCapabilities.map(({ icon: Icon, title, text }) => (
               <div key={title} className="field-card p-7">

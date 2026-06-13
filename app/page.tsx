@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2, MapPinned, ScanLine } from 'lucide-react'
-import { FieldPattern, PageShell, SectionHeader } from '@/components/PublicSite'
+import { PageShell, SectionHeader } from '@/components/PublicSite'
 import {
   benefits,
   company,
@@ -18,7 +18,6 @@ export default function HomePage() {
     <PageShell>
       <main>
         <section className="relative overflow-hidden border-b border-stone-200 bg-[#ece4d1]">
-          <FieldPattern />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-14 sm:px-8 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:pb-20 lg:pt-20">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary-900">Agricultural intelligence</p>
@@ -26,12 +25,12 @@ export default function HomePage() {
                 AI-powered crop disease intelligence
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-                CropIntel helps growers detect likely disease from crop leaf photos, review confidence-based results,
-                understand treatment options, and monitor outbreak pressure.
+                CropIntel is building agricultural intelligence for growers and operators who need clearer crop health
+                context, disease pressure awareness, and practical field decision support.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/signup" className="btn-primary">
-                  Sign up
+                <Link href="/download" className="btn-primary">
+                  Download app
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link href="/how-it-works" className="btn-secondary">
@@ -41,32 +40,36 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="field-card overflow-hidden bg-[#17351f] text-white">
-                <div className="relative aspect-[4/3] bg-[linear-gradient(135deg,#1f4a2a,#75613a)]">
-                  <div className="absolute inset-0 opacity-35 [background-image:repeating-linear-gradient(100deg,transparent_0_20px,rgba(255,255,255,.22)_21px_22px)]" />
-                  <div className="absolute left-6 top-6 rounded-2xl bg-white/90 p-3 shadow-sm">
-                    <Image src="/brand/mark.png" alt="CropIntel mark" width={54} height={54} />
-                  </div>
-                  <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/15 bg-black/25 p-5 backdrop-blur-md">
-                    <div className="flex items-center justify-between gap-4">
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">Field scan</p>
-                        <p className="mt-2 text-2xl font-semibold">Gray Leaf Spot</p>
+              <div className="field-card overflow-hidden bg-white">
+                <div className="relative aspect-[4/3] bg-[#d9dfcb]">
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(42,78,45,.88),rgba(208,163,72,.42))]" />
+                  <div className="absolute inset-x-8 top-8 h-28 rounded-[2rem] border border-white/25 bg-white/15 backdrop-blur-sm" />
+                  <div className="absolute bottom-0 left-1/2 h-[82%] w-[42%] -translate-x-1/2 rounded-t-[2.5rem] border-x border-t border-white/35 bg-[#f8f5ec] p-3 shadow-2xl">
+                    <div className="h-full rounded-t-[2rem] bg-[#213c25] p-5 text-white">
+                      <div className="mx-auto h-1.5 w-16 rounded-full bg-white/30" />
+                      <div className="mt-8 rounded-2xl bg-white/10 p-4">
+                        <Image src="/brand/wheat-mark-transparent.png" alt="" width={34} height={56} className="mx-auto" />
                       </div>
-                      <div className="rounded-full bg-[#d9a441] px-3 py-1 text-sm font-bold text-[#1c2b16]">87%</div>
+                      <div className="mt-8 space-y-3">
+                        <div className="h-3 rounded-full bg-white/65" />
+                        <div className="h-3 w-3/4 rounded-full bg-white/35" />
+                        <div className="h-3 w-1/2 rounded-full bg-white/25" />
+                      </div>
                     </div>
-                    <div className="mt-5 grid grid-cols-3 gap-3 text-xs text-white/70">
-                      <span className="rounded-xl bg-white/10 px-3 py-2">Corn</span>
-                      <span className="rounded-xl bg-white/10 px-3 py-2">IA region</span>
-                      <span className="rounded-xl bg-white/10 px-3 py-2">High severity</span>
-                    </div>
+                  </div>
+                  <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/20 bg-[#1d321f]/90 p-5 text-white shadow-xl backdrop-blur-md">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9b15f]">App preview</p>
+                    <p className="mt-2 text-2xl font-semibold">Coming soon to iPhone</p>
+                    <p className="mt-2 max-w-md text-sm leading-6 text-white/70">
+                      Download links will appear here after App Store publication.
+                    </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10">
+                <div className="grid grid-cols-3 divide-x divide-stone-200 border-t border-stone-200 bg-[#fbfaf6]">
                   {platformStats.slice(0, 3).map((stat) => (
                     <div key={stat.label} className="p-5">
-                      <p className="text-2xl font-semibold">{stat.value}</p>
-                      <p className="mt-1 text-xs text-white/55">{stat.label}</p>
+                      <p className="text-2xl font-semibold text-primary-900">{stat.value}</p>
+                      <p className="mt-1 text-xs text-slate-500">{stat.label}</p>
                     </div>
                   ))}
                 </div>
@@ -78,8 +81,8 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
           <SectionHeader
             eyebrow="Platform value"
-            title="Crop health insight from photo to field action"
-            text="The product combines image upload, crop selection, AI prediction, treatment guidance, and outbreak awareness in one workflow."
+            title="Crop health intelligence built for the field"
+            text="The CropIntel platform brings crop-specific AI, treatment guidance, and outbreak awareness into a practical mobile workflow."
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {valuePoints.map(({ icon: Icon, title, text }) => (
@@ -132,8 +135,8 @@ export default function HomePage() {
         <section className="bg-[#213c25] py-20 text-white">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[.85fr_1.15fr]">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#d9b15f]">Key features</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight">Built around real CropIntel capabilities</h2>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#d9b15f]">Platform direction</p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight">The intelligence layer behind the CropIntel app</h2>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {features.map((feature) => (
@@ -171,7 +174,7 @@ export default function HomePage() {
             </div>
             <div className="field-card p-8">
               <ScanLine className="h-7 w-7 text-primary-800" />
-              <h2 className="mt-5 text-3xl font-semibold">Leadership preview</h2>
+              <h2 className="mt-5 text-3xl font-semibold">Team preview</h2>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {team.slice(0, 2).map((member) => (
                   <div key={member.name} className="rounded-2xl bg-[#f6f2e7] p-4">

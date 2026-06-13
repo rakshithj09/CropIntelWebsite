@@ -15,21 +15,21 @@ import {
 
 export const company = {
   name: 'CropIntel',
-  tagline: 'AI-powered crop disease intelligence for faster field decisions.',
+  tagline: 'Agricultural intelligence for faster field decisions.',
   overview:
-    'CropIntel helps farmers, crop advisors, and agricultural operators identify likely crop disease earlier by combining photo-based AI diagnosis, crop-specific disease guidance, regional awareness, and outbreak monitoring.',
+    'CropIntel is an agricultural intelligence company building practical tools for farmers, crop advisors, and agricultural operators to understand crop health, regional disease pressure, and field risk sooner.',
   mission:
-    'Help growers respond to crop health issues earlier with practical, accessible intelligence that turns field photos into clear next steps.',
+    'Help growers respond to crop health issues earlier with practical, accessible intelligence built around real field workflows.',
   vision:
     'A resilient agricultural network where disease pressure is detected sooner, shared faster, and managed with better local context.',
   contactEmail: 'hello@cropintel.ai',
-  contactPhone: '+1 (479) 555-0148',
-  location: 'Russellville, Arkansas',
+  location: 'Bentonville, Arkansas',
 }
 
 export const navLinks = [
   { href: '/product', label: 'Product' },
   { href: '/how-it-works', label: 'How it works' },
+  { href: '/download', label: 'Download' },
   { href: '/about', label: 'About' },
   { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact' },
@@ -141,24 +141,24 @@ export const values = [
 
 export const team = [
   {
-    name: 'Maya Benton',
-    role: 'Chief Executive Officer',
-    bio: 'Agriculture operator and product strategist focused on bringing dependable decision support into field workflows.',
+    name: 'Founding Team',
+    role: 'Company leadership',
+    bio: 'Guides CropIntel’s product direction, field partnerships, and long-term agricultural intelligence roadmap.',
   },
   {
-    name: 'Dr. Elias Moreno',
-    role: 'Head of Plant Intelligence',
-    bio: 'Plant pathology and machine learning lead guiding model evaluation, disease taxonomy, and crop-specific validation.',
+    name: 'Product & Engineering',
+    role: 'Mobile and platform development',
+    bio: 'Builds the CropIntel app experience, image workflow, crop guidance surfaces, and release infrastructure.',
   },
   {
-    name: 'Priya Shah',
-    role: 'Engineering Lead',
-    bio: 'Full-stack engineer responsible for CropIntel’s prediction experience, secure upload flow, and product architecture.',
+    name: 'Crop Intelligence',
+    role: 'Model and agronomy workflow',
+    bio: 'Focuses on crop-specific disease context, AI-assisted analysis, treatment guidance, and result interpretation.',
   },
   {
-    name: 'Caleb Turner',
-    role: 'Field Operations Lead',
-    bio: 'Works with growers and advisors to shape onboarding, outbreak reporting, and practical scouting workflows.',
+    name: 'Field Partnerships',
+    role: 'Grower and advisor relationships',
+    bio: 'Connects product development to real scouting needs, regional pressure tracking, and operator feedback.',
   },
 ]
 
@@ -173,9 +173,9 @@ export const faqs = [
     answer: 'The current product supports corn, soybean, wheat, and rice.',
   },
   {
-    question: 'What happens after account creation?',
+    question: 'When will the app be available?',
     answer:
-      'Users enter the CropIntel app area where they can run diagnosis, review history, register a farm profile, and monitor outbreak reports.',
+      'CropIntel for iOS is being prepared for App Store publication. The download page will be updated when the listing is live.',
   },
 ]
 
@@ -192,8 +192,7 @@ export const footerColumns = [
     links: [
       { href: '/product', label: 'Platform' },
       { href: '/how-it-works', label: 'How it works' },
-      { href: '/signup', label: 'Create account' },
-      { href: '/app', label: 'Launch app' },
+      { href: '/download', label: 'Download' },
     ],
   },
   {
@@ -202,13 +201,6 @@ export const footerColumns = [
       { href: '/about', label: 'About' },
       { href: '/team', label: 'Team' },
       { href: '/contact', label: 'Contact' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { href: '/contact', label: 'Privacy placeholder' },
-      { href: '/contact', label: 'Terms placeholder' },
     ],
   },
 ]

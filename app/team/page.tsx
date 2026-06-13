@@ -9,17 +9,16 @@ export default function TeamPage() {
           <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-900">Team</p>
             <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-slate-950">
-              Leadership shaped by agriculture, AI, and field operations
+              The people and functions behind CropIntel
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-              Placeholder staff content is structured in a single config file so real leadership details can be edited
-              without reworking page code.
+              CropIntel is being built across product, engineering, crop intelligence, and field partnership workstreams.
             </p>
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <SectionHeader title="CropIntel leadership" text="A public company page should be credible before it is complete. These profiles are editable placeholders." />
+          <SectionHeader title="Company team" text="These areas represent the core functions responsible for bringing CropIntel from product development to App Store launch." />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {team.map((member) => (
               <article key={member.name} className="field-card p-7">

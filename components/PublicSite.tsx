@@ -45,18 +45,15 @@ export function PublicHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/login" className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 hover:text-primary-900">
-            Log in
-          </Link>
-          <Link href="/signup" className="btn-primary">
-            Sign up
+          <Link href="/download" className="btn-primary">
+            Download
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
         <Link
-          href="/signup"
+          href="/download"
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white text-slate-800 md:hidden"
-          aria-label="Open signup"
+          aria-label="Open download page"
         >
           <Menu className="h-5 w-5" />
         </Link>
@@ -74,7 +71,7 @@ export function PublicFooter() {
           <p className="mt-5 max-w-md text-sm leading-6 text-white/70">{company.tagline}</p>
           <p className="mt-6 text-sm text-white/60">{company.location}</p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2">
           {footerColumns.map((column) => (
             <div key={column.title}>
               <h3 className="text-sm font-semibold text-white">{column.title}</h3>
@@ -90,7 +87,7 @@ export function PublicFooter() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/50">
-        (c) 2026 CropIntel. Public website and app shell.
+        (c) 2026 CropIntel. Company website.
       </div>
     </footer>
   )

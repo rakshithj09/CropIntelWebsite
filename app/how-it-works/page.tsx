@@ -21,7 +21,7 @@ export default function HowItWorksPage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <SectionHeader title="Detection workflow" text="The existing app workflow is now available through the protected CropIntel app area." />
+          <SectionHeader title="Crop intelligence workflow" text="CropIntel is designed as a mobile-first field workflow for crop health review, guidance, and outbreak awareness." />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {workflow.map(({ icon: Icon, title, text }, index) => (
               <div key={title} className="field-card p-6">
@@ -55,12 +55,12 @@ export default function HowItWorksPage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-20 text-center sm:px-8">
-          <h2 className="text-3xl font-semibold tracking-tight">Ready to run a field diagnosis?</h2>
+          <h2 className="text-3xl font-semibold tracking-tight">Follow the iOS launch</h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-            Create an account to open the preserved CropIntel diagnosis, history, farm profile, and outbreak experience.
+            The App Store download page will be updated when CropIntel for iOS is published.
           </p>
-          <Link href="/signup" className="btn-primary mt-7">
-            Sign up
+          <Link href="/download" className="btn-primary mt-7">
+            Download page
             <ArrowRight className="h-4 w-4" />
           </Link>
         </section>
