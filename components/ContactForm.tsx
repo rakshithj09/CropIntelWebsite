@@ -1,0 +1,201 @@
+'use client'
+
+import { FormEvent, useState } from 'react'
+import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react'
+
+type FormState = {
+  name: string
+  email: string
+  subject: string
+  message: string
+  website: string
+}
+
+const initialFormState: FormState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+  website: '',
+}
+
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+export default function ContactForm() {
+  const [form, setForm] = useState<FormState>(initialFormState)
+  const [submitting, setSubmitting] = useState(false)
+  const [successMessage, setSuccessMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof FormState, string>>>({})
+
+  function updateField(field: keyof FormState, value: string) {
+    setForm((current) => ({ ...current, [field]: value }))
+    setFieldErrors((current) => ({ ...current, [field]: undefined }))
+    setSuccessMessage('')
+    setErrorMessage('')
+  }
+
+  function validateForm() {
+    const nextErrors: Partial<Record<keyof FormState, string>> = {}
+
+    if (!form.name.trim()) {
+      nextErrors.name = 'Full name is required.'
+    }
+
+    if (!form.email.trim()) {
+      nextErrors.email = 'Email address is required.'
+    } else if (!isValidEmail(form.email.trim())) {
+      nextErrors.email = 'Enter a valid email address.'
+    }
+
+    if (!form.subject.trim()) {
+      nextErrors.subject = 'Subject is required.'
+    }
+
+    if (!form.message.trim()) {
+      nextErrors.message = 'Message is required.'
+    }
+
+    setFieldErrors(nextErrors)
+    return Object.keys(nextErrors).length === 0
+  }
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setSuccessMessage('')
+    setErrorMessage('')
+
+    if (!validateForm()) return
+
+    setSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          subject: form.subject.trim(),
+          message: form.message.trim(),
+          website: form.website,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Contact form submission failed.')
+      }
+
+      setForm(initialFormState)
+      setFieldErrors({})
+      setSuccessMessage('Thank you for contacting CropIntel. We will get back to you soon.')
+    } catch (error) {
+      console.error('Contact form submission failed:', error)
+      setErrorMessage('We could not send your message right now. Please try again later.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="field-card p-6 sm:p-7" noValidate>
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary-800">Contact us</p>
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
+        Send a message to the CropIntel team
+      </h2>
+      <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
+        Use the form below for launch updates, partnerships, grower feedback, and general company questions.
+      </p>
+
+      <input
+        value={form.website}
+        onChange={(event) => updateField('website', event.target.value)}
+        className="hidden"
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+
+      <div className="mt-7 grid gap-5 sm:grid-cols-2">
+        <label className="block">
+          <span className="text-sm font-semibold text-slate-800">Full Name</span>
+          <input
+            value={form.name}
+            onChange={(event) => updateField('name', event.target.value)}
+            className="mt-2 w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition focus:border-primary-700 focus:ring-2 focus:ring-primary-700/15"
+            type="text"
+            autoComplete="name"
+            aria-invalid={Boolean(fieldErrors.name)}
+            required
+          />
+          {fieldErrors.name && <span className="mt-2 block text-xs font-semibold text-red-700">{fieldErrors.name}</span>}
+        </label>
+
+        <label className="block">
+          <span className="text-sm font-semibold text-slate-800">Email Address</span>
+          <input
+            value={form.email}
+            onChange={(event) => updateField('email', event.target.value)}
+            className="mt-2 w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition focus:border-primary-700 focus:ring-2 focus:ring-primary-700/15"
+            type="email"
+            autoComplete="email"
+            aria-invalid={Boolean(fieldErrors.email)}
+            required
+          />
+          {fieldErrors.email && <span className="mt-2 block text-xs font-semibold text-red-700">{fieldErrors.email}</span>}
+        </label>
+      </div>
+
+      <label className="mt-5 block">
+        <span className="text-sm font-semibold text-slate-800">Subject</span>
+        <input
+          value={form.subject}
+          onChange={(event) => updateField('subject', event.target.value)}
+          className="mt-2 w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition focus:border-primary-700 focus:ring-2 focus:ring-primary-700/15"
+          type="text"
+          autoComplete="off"
+          aria-invalid={Boolean(fieldErrors.subject)}
+          required
+        />
+        {fieldErrors.subject && <span className="mt-2 block text-xs font-semibold text-red-700">{fieldErrors.subject}</span>}
+      </label>
+
+      <label className="mt-5 block">
+        <span className="text-sm font-semibold text-slate-800">Message</span>
+        <textarea
+          value={form.message}
+          onChange={(event) => updateField('message', event.target.value)}
+          className="mt-2 min-h-[150px] w-full resize-y rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition focus:border-primary-700 focus:ring-2 focus:ring-primary-700/15"
+          aria-invalid={Boolean(fieldErrors.message)}
+          required
+        />
+        {fieldErrors.message && <span className="mt-2 block text-xs font-semibold text-red-700">{fieldErrors.message}</span>}
+      </label>
+
+      {successMessage && (
+        <div className="mt-5 flex gap-3 rounded-2xl border border-primary-200 bg-primary-50 px-4 py-3 text-sm text-primary-900">
+          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{successMessage}</span>
+        </div>
+      )}
+
+      {errorMessage && (
+        <div className="mt-5 flex gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{errorMessage}</span>
+        </div>
+      )}
+
+      <button type="submit" disabled={submitting} className="btn-primary mt-6 w-full sm:w-auto">
+        {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+        {submitting ? 'Sending message' : 'Send message'}
+      </button>
+    </form>
+  )
+}
