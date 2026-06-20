@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "cropintel",
+    "site": "cropintel-ae842",
     "public": "out",
     "ignore": [
       "firebase.json",
