@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "cropintel-ae842"
-  }
+  },
+  "targets": {
+    "cropintel-ae842": {
+      "hosting": {
+        "cropintel-web": [
+          "cropintel-web"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
