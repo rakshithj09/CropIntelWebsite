@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "cropintel-ae842"
+    "default": "cropintel-home"
   },
   "targets": {
-    "cropintel-ae842": {
+    "cropintel-home": {
       "hosting": {
         "cropintel-web": [
-          "cropintel-web"
+          "cropintel-home"
         ]
       }
     }

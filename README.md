@@ -73,7 +73,7 @@ Builds the static export and deploys it to Firebase Hosting.
 Firebase project:
 
 ```text
-cropintel-ae842
+cropintel-home
 ```
 
 Primary Hosting site:
@@ -90,7 +90,7 @@ https://cropintel.web.app
 
 Important Firebase files:
 
-- `.firebaserc` - maps the local repo to Firebase project `cropintel-ae842`
+- `.firebaserc` - maps the local repo to Firebase project `cropintel-home`
 - `firebase.json` - configures Firebase Hosting to deploy the `out/` directory to site `cropintel`
 - `.github/workflows/firebase-hosting-merge.yml` - deploys the live site on pushes to `main`
 - `.github/workflows/firebase-hosting-pull-request.yml` - creates Firebase preview channels for pull requests
