@@ -8,7 +8,7 @@ function GithubMark({ className }: { className?: string }) {
 }
 
 const REPO_URL = "https://github.com/rakshithj09/CropIntel";
-const APP_URL = "https://jaithrap-cropintel.hf.space";
+const APP_URL = "https://cropintel-us.vercel.app";
 
 const COLUMNS = [
   {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const APP_URL = "https://jaithrap-cropintel.hf.space";
+const APP_URL = "https://cropintel-us.vercel.app";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);

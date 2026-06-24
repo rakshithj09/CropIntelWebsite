@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import GradientField from "./GradientField";
 import Reveal from "./Reveal";
 
-const APP_URL = "https://jaithrap-cropintel.hf.space";
+const APP_URL = "https://cropintel-us.vercel.app";
 
 export default function FinalCTA() {
   return (
