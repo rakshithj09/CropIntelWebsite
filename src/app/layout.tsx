@@ -17,9 +17,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "CropIntel",
+  title: "Crop Intel",
   description:
-    "Point your phone at a leaf. CropIntel names the disease, rates the severity, and tells you what to do — in seconds, even offline.",
+    "Take a photo of a leaf and get an instant disease diagnosis, severity rating, and treatment recommendation.",
 };
 
 export default function RootLayout({
