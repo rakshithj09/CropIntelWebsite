@@ -1,5 +1,3 @@
-import { Leaf } from "lucide-react";
-
 // lucide-react no longer ships brand logos, so inline the GitHub mark.
 function GithubMark({ className }: { className?: string }) {
   return (
@@ -45,8 +43,13 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-leaf text-white">
-              <Leaf className="h-4 w-4" strokeWidth={2.5} />
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-leaf">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/wheat-mark-transparent.png"
+                alt="CropIntel"
+                className="h-5 w-auto object-contain"
+              />
             </span>
             <span className="font-display text-lg font-extrabold tracking-tight text-ink">
               CropIntel
