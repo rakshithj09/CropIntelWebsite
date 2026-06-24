@@ -1,150 +1,36 @@
-# CropIntel Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Public website for CropIntel, built with Next.js 14, React, TypeScript, Tailwind CSS, and Firebase Hosting.
+## Getting Started
 
-Live site:
-
-```text
-https://cropintel.web.app
-```
-
-## Overview
-
-This repo contains the public-facing CropIntel website:
-
-- Home page
-- Product overview
-- How it works
-- Download status page
-- Team page with local team photos and LinkedIn profile links
-- About page
-- Contact page
-
-The Firebase deployment is a static export. Server-only Next.js features such as API routes are not used in the deployed Hosting build.
-
-## Local Development
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the local Next.js dev server:
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```text
-http://localhost:3050
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Scripts
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```bash
-npm run dev
-```
+## Learn More
 
-Starts the local development server on port `3050`.
+To learn more about Next.js, take a look at the following resources:
 
-```bash
-npm run build
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Runs a normal Next.js production build.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-```bash
-npm run build:hosting
-```
+## Deploy on Vercel
 
-Builds the static export used by Firebase Hosting. The output is written to `out/`.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```bash
-npm run deploy:hosting
-```
-
-Builds the static export and deploys it to Firebase Hosting.
-
-## Firebase Hosting
-
-Firebase project:
-
-```text
-cropintel-home
-```
-
-Primary Hosting site:
-
-```text
-cropintel
-```
-
-Primary URL:
-
-```text
-https://cropintel.web.app
-```
-
-Important Firebase files:
-
-- `.firebaserc` - maps the local repo to Firebase project `cropintel-home`
-- `firebase.json` - configures Firebase Hosting to deploy the `out/` directory to site `cropintel`
-- `.github/workflows/firebase-hosting-merge.yml` - deploys the live site on pushes to `main`
-- `.github/workflows/firebase-hosting-pull-request.yml` - creates Firebase preview channels for pull requests
-
-## Automatic Deployment
-
-GitHub Actions is configured for Firebase Hosting.
-
-When code is pushed to `main`, the workflow:
-
-1. Checks out the repo
-2. Sets up Node.js 20
-3. Runs `npm ci`
-4. Runs `npm run build:hosting`
-5. Deploys the `out/` directory to Firebase Hosting
-
-Manual deploy is still available:
-
-```bash
-npm run deploy:hosting
-```
-
-## Static Contact Page
-
-The Contact page uses a client-side `mailto:` flow. It opens the visitor's email app with the message prefilled and addressed to:
-
-```text
-hello@cropintel.ai
-```
-
-There is no server-side contact API in the Firebase Hosting deployment.
-
-## Project Layout
-
-- `app/` - Next.js App Router pages and global styles
-- `components/` - Shared React components
-- `lib/siteContent.ts` - Editable company, product, team, FAQ, navigation, and footer content
-- `lib/security/headers.ts` - Security headers used by Next middleware during non-static builds
-- `public/brand/` - CropIntel brand assets
-- `public/team/` - Local team profile photos
-- `.github/workflows/` - Firebase Hosting deployment workflows
-
-## Content Updates
-
-Most website copy lives in:
-
-```text
-lib/siteContent.ts
-```
-
-Team profile photos live in:
-
-```text
-public/team/
-```
-
-After editing content, commit and push to `main` to trigger automatic deployment.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
