@@ -7,20 +7,20 @@ const STEPS = [
   {
     n: "01",
     icon: Camera,
-    title: "Snap a leaf",
-    body: "Fill the frame with one affected leaf. A phone photo in the field is all it takes — no special hardware.",
+    title: "Take a photo",
+    body: "Capture one affected leaf in clear lighting",
   },
   {
     n: "02",
     icon: ScanLine,
-    title: "CropIntel analyzes it",
-    body: "The model runs on-device and compares the leaf against the diseases it knows for that crop — no upload required.",
+    title: "Analyze",
+    body: "CropIntel checks the image directly on your device",
   },
   {
     n: "03",
     icon: ClipboardCheck,
-    title: "Get the diagnosis & next step",
-    body: "See the disease, a confidence score, how severe it looks, and a clear recommended action.",
+    title: "Results",
+    body: "View the disease, severity, confidence score, and recommended action.",
   },
 ];
 

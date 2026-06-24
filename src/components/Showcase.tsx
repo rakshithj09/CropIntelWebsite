@@ -5,21 +5,21 @@ const CARDS = [
   {
     icon: WifiOff,
     wash: "from-grad-1/70",
-    title: "Works offline, in the field",
-    body: "The model is small enough to run on-device. No signal at the back forty? It still diagnoses — nothing leaves the phone.",
+    title: "Works offline",
+    body: "Diagnose crops anywhere, even without internet. ",
   },
   {
     icon: Gauge,
     wash: "from-grad-3/70",
-    title: "Severity, not just a label",
-    body: "A name alone doesn't tell you how worried to be. CropIntel rates how far the infection has progressed so you can triage.",
+    title: "Severity tracking",
+    body: "Know how serious the infection is and prioritize treatment.",
     accent: true,
   },
   {
     icon: Sprout,
     wash: "from-grad-2/70",
-    title: "A recommended next step",
-    body: "Every diagnosis comes with a concrete action — what to apply, what to remove, and how fast to move.",
+    title: "Recommended actions",
+    body: "Get clear guidance on what to do next.",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function Showcase() {
         <Reveal>
           <span className="eyebrow mb-5">Why CropIntel</span>
           <h2 className="max-w-2xl font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
-            More than a label on a leaf.
+            More than disease detection.
           </h2>
         </Reveal>
 

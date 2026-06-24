@@ -6,28 +6,24 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 const FAQS = [
   {
-    q: "What crops and diseases does it cover?",
-    a: "Five crops today — corn, soybean, wheat, rice, and tomato — across 25 diseases plus a healthy baseline. Each crop has its own set of conditions the model was trained to tell apart.",
+    q: "What crops and diseases are supported?",
+    a: "Corn, soybean, wheat, rice, and tomato, with detection for 25 diseases.",
   },
   {
     q: "How accurate is it?",
-    a: "Mean validation accuracy is around 96% across the measured crops, on held-out test images. Real-world accuracy depends on the crop and photo quality, so every diagnosis shows a confidence score — treat low-confidence results with caution.",
+    a: "CropIntel achieves about 96% validation accuracy. Every diagnosis includes a confidence score.",
   },
   {
     q: "Does it work offline?",
-    a: "Yes. The model is compact enough to run on-device, so it diagnoses without a connection and without sending your photos anywhere.",
+    a: "Yes. CropIntel runs directly on your device and does not require internet access.",
   },
   {
     q: "What should I photograph?",
-    a: "A single affected leaf, filling the frame, in good light. If no leaf is detected the app asks you to retake — clear, close, one leaf.",
-  },
-  {
-    q: "Is it free and open source?",
-    a: "Yes — the full stack, model included, is open source on GitHub. You can run it yourself or try the hosted scanner.",
+    a: "Take a close photo of one affected leaf in good lighting.",
   },
   {
     q: "How is the model trained?",
-    a: "An EfficientNet image classifier per crop, exported to TensorFlow Lite for on-device use, trained on labeled leaf-disease image sets and validated on held-out data.",
+    a: "CropIntel is trained on thousands of labeled crop disease images and optimized for mobile devices.",
   },
 ];
 

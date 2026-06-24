@@ -56,7 +56,7 @@ export default function Footer() {
             </span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-            Crop disease, diagnosed from a single photo — open source, on-device.
+            Crop disease detection from a photo. Fast, offline, and accurate.
           </p>
           <a
             href={REPO_URL}

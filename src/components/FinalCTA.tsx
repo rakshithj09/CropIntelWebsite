@@ -12,10 +12,10 @@ export default function FinalCTA() {
         <div className="relative z-10">
           <Reveal>
             <h2 className="mx-auto max-w-2xl font-display text-[clamp(2.25rem,5vw,4rem)] font-extrabold leading-[1.02] tracking-[-0.02em] text-ink">
-              Point your phone at the problem.
+              Identify crop diseases in seconds.
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-ink-soft">
-              Get a diagnosis, a severity read, and a next step — in seconds.
+              Get a diagnosis, severity rating, and recommended action.
             </p>
             <a
               href={APP_URL}

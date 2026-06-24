@@ -25,6 +25,7 @@ export default function ScanCard() {
   // analyze → resolve
   useEffect(() => {
     if (reduce) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setResolved(true);
       setCount(CONFIDENCE);
       return;
@@ -137,8 +138,7 @@ export default function ScanCard() {
       >
         <Check className="mt-0.5 h-4 w-4 shrink-0 text-leaf" strokeWidth={2.5} />
         <p className="text-sm leading-snug text-ink-soft">
-          Pustules across the canopy before tasseling — apply a foliar fungicide
-          (triazole or strobilurin) now.
+          Southern Rust detected. Moderate severity. Apply a foliar fungicide soon.
         </p>
       </motion.div>
     </motion.div>
