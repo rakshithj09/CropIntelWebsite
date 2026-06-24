@@ -27,7 +27,7 @@ export default function ScanCard() {
 
   return (
     <motion.div
-      initial={reduce ? false : { opacity: 0, y: 28, rotate: -4 }}
+      initial={false}
       animate={{ opacity: 1, y: 0, rotate: -3 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="scan-card glass relative w-[330px] overflow-hidden rounded-[var(--radius-card)] p-5 sm:w-[360px]"
