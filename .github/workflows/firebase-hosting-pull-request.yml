@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - run: npm ci && npm run build:hosting
       - name: Validate Firebase service account secret
         env:
@@ -25,4 +28,4 @@ jobs:
         run: |
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-service-account.json"
-          npx firebase-tools@15.22.1 hosting:channel:deploy "pr-${{ github.event.pull_request.number }}" --project cropintel-home --expires 7d
+          npx firebase-tools@15.22.1 hosting:channel:deploy "pr-${{ github.event.pull_request.number }}" --project cropintel-home --expires 7d --debug
