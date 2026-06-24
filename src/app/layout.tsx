@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Crop Intel",
+  title: "CropIntel",
   description:
     "Take a photo of a leaf and get an instant disease diagnosis, severity rating, and treatment recommendation.",
 };
