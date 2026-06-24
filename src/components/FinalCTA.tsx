@@ -6,8 +6,8 @@ const APP_URL = "https://jaithrap-cropintel.hf.space";
 
 export default function FinalCTA() {
   return (
-    <section className="relative px-4 py-12">
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[32px] px-6 py-20 text-center">
+    <section className="relative px-4 py-16">
+      <div className="glass relative mx-auto max-w-5xl overflow-hidden rounded-[32px] px-6 py-24 text-center">
         <GradientField />
         <div className="relative z-10">
           <Reveal>

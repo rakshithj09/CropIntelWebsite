@@ -28,6 +28,7 @@ export default function Showcase() {
     <section className="relative px-4 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
+          <span className="eyebrow mb-5">Why CropIntel</span>
           <h2 className="max-w-2xl font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
             More than a label on a leaf.
           </h2>
@@ -37,7 +38,7 @@ export default function Showcase() {
           {CARDS.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.1}>
               <div
-                className={`glass relative h-full overflow-hidden rounded-[var(--radius-card)] bg-gradient-to-br ${c.wash} to-transparent p-8`}
+                className={`glass lift relative h-full overflow-hidden rounded-[var(--radius-card)] bg-gradient-to-br ${c.wash} to-transparent p-8`}
               >
                 <span
                   className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
