@@ -20,10 +20,11 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME }}
         run: |
           node -e "const raw = process.env.FIREBASE_SERVICE_ACCOUNT; if (!raw) throw new Error('Missing FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME secret'); const json = JSON.parse(raw); for (const key of ['client_email', 'private_key', 'project_id']) if (!json[key]) throw new Error('Firebase service account secret is missing ' + key); if (json.project_id !== 'cropintel-home') throw new Error('Firebase service account project_id must be cropintel-home');"
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME }}
       - name: Deploy to Firebase Hosting
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME }}
         run: |
-          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
-          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-service-account.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="${{ steps.auth.outputs.credentials_file_path }}"
           npx firebase-tools@15.22.1 deploy --only hosting --project cropintel-home --debug
