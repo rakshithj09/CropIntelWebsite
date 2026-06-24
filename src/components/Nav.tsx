@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Leaf } from "lucide-react";
 
 const APP_URL = "https://jaithrap-cropintel.hf.space";
 
@@ -23,8 +22,13 @@ export default function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-leaf text-white">
-            <Leaf className="h-4 w-4" strokeWidth={2.5} />
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-leaf">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/wheat-mark-transparent.png"
+              alt="CropIntel"
+              className="h-5 w-auto object-contain"
+            />
           </span>
           <span className="font-display text-lg font-extrabold tracking-tight text-ink">
             CropIntel
