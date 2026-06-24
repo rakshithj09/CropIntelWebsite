@@ -15,8 +15,9 @@ export default function Crops() {
             {CROPS.map((crop) => (
               <span
                 key={crop}
-                className="glass rounded-full px-5 py-2.5 font-display text-base font-bold text-ink"
+                className="glass group inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 font-display text-base font-bold text-ink transition-transform duration-300 hover:-translate-y-0.5"
               >
+                <span className="h-2 w-2 rounded-full bg-leaf transition-colors duration-300 group-hover:bg-leaf-deep" />
                 {crop}
               </span>
             ))}

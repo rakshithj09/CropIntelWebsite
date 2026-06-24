@@ -38,9 +38,12 @@ export default function FAQ() {
   return (
     <section id="faq" className="relative px-4 py-24">
       <div className="mx-auto max-w-3xl">
-        <h2 className="text-center font-display text-[clamp(2rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-ink">
-          Questions, answered.
-        </h2>
+        <div className="flex flex-col items-center text-center">
+          <span className="eyebrow mb-5">FAQ</span>
+          <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-ink">
+            Questions, answered.
+          </h2>
+        </div>
 
         <div className="mt-12 space-y-3">
           {FAQS.map((item, i) => {
@@ -50,7 +53,7 @@ export default function FAQ() {
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-inset"
+                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-inset"
                 >
                   <span className="font-display text-lg font-bold text-ink">
                     {item.q}

@@ -29,6 +29,7 @@ export default function HowItWorks() {
     <section id="how" className="relative px-4 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
+          <span className="eyebrow mb-5">How it works</span>
           <h2 className="max-w-2xl font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
             From a sick plant to a plan, in three steps.
           </h2>
@@ -37,7 +38,7 @@ export default function HowItWorks() {
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {STEPS.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.1}>
-              <div className="glass h-full rounded-[var(--radius-card)] p-7">
+              <div className="glass lift h-full rounded-[var(--radius-card)] p-7">
                 <div className="flex items-center justify-between">
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-leaf/10 text-leaf-deep">
                     <s.icon className="h-5 w-5" strokeWidth={2} />

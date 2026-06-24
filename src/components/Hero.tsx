@@ -42,7 +42,9 @@ export default function Hero() {
 
         {/* signature scan card */}
         <div className="flex justify-center lg:justify-end">
-          <ScanCard />
+          <div className="floaty">
+            <ScanCard />
+          </div>
         </div>
       </div>
     </section>

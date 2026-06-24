@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import CountUp from "./CountUp";
 
 /*
  * REAL numbers from the repo (do not invent):
@@ -21,28 +22,30 @@ export default function Stats() {
   return (
     <section id="accuracy" className="relative px-4 py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 sm:grid-cols-3">
-          {STATS.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.1}>
-              <div className="text-center sm:text-left">
-                <p className="font-mono text-[clamp(3rem,7vw,5.5rem)] font-bold leading-none tracking-tight text-ink">
-                  {s.value}
-                </p>
-                <p className="mt-4 font-display text-lg font-bold text-ink">
+        <Reveal className="mb-12 text-center">
+          <span className="eyebrow">Accuracy</span>
+          <h2 className="mx-auto mt-5 max-w-2xl font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
+            Tested, measured, and honest about it.
+          </h2>
+        </Reveal>
+
+        <Reveal>
+          <div className="glass grid divide-y divide-ink/10 rounded-[var(--radius-card)] px-2 py-4 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {STATS.map((s) => (
+              <div key={s.label} className="px-6 py-8 text-center">
+                <CountUp
+                  value={s.value}
+                  className="block font-mono text-[clamp(2.75rem,6vw,4.5rem)] font-bold leading-none tracking-tight text-ink tabular-nums"
+                />
+                <p className="mt-4 font-display text-base font-bold text-ink">
                   {s.label}
                 </p>
                 <p className="mt-1 text-sm text-ink-soft">{s.sub}</p>
               </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal>
-          <p className="mt-12 max-w-2xl text-sm text-ink-soft/80">
-            Accuracy is mean per-crop validation accuracy on held-out test images.
-            Field accuracy varies by crop and image quality — CropIntel always
-            shows its confidence so you can judge a result.
-          </p>
+            ))}
+          </div>
         </Reveal>
+
       </div>
     </section>
   );
