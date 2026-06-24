@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Showcase from "@/components/Showcase";
 import Stats from "@/components/Stats";
-import Crops from "@/components/Crops";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -18,7 +17,6 @@ export default function Home() {
       <HowItWorks />
       <Showcase />
       <Stats />
-      <Crops />
       <FAQ />
       <FinalCTA />
       <Footer />

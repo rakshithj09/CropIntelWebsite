@@ -213,7 +213,7 @@ body {
   animation: scanline 1.2s ease-out;
 }
 
-/* ---- Custom garden cursor (taskflows-style dot + trailing ring) ---- */
+/* ---- Custom cursor (taskflows-style dot + trailing ring) ---- */
 /* Native cursor hidden only while the field is mounted on a fine pointer. */
 body.cursor-field-active,
 body.cursor-field-active a,

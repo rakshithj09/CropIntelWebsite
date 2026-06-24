@@ -52,7 +52,7 @@ export default function CursorField() {
         dot.style.opacity = "1";
         ring.style.opacity = "1";
       }
-      const el = e.target as HTMLElement | null;
+      const el = e.target instanceof Element ? e.target : null;
       overInteractive = !!el?.closest(
         'a, button, input, textarea, select, [role="button"], label',
       );
