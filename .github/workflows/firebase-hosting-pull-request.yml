@@ -11,13 +11,18 @@ jobs:
   build_and_preview:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
-    env:
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     steps:
       - uses: actions/checkout@v4
       - run: npm ci && npm run build:hosting
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME }}
-          projectId: cropintel-home
+      - name: Validate Firebase service account secret
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME }}
+        run: |
+          node -e "const raw = process.env.FIREBASE_SERVICE_ACCOUNT; if (!raw) throw new Error('Missing FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME secret'); const json = JSON.parse(raw); for (const key of ['client_email', 'private_key', 'project_id']) if (!json[key]) throw new Error('Firebase service account secret is missing ' + key); if (json.project_id !== 'cropintel-home') throw new Error('Firebase service account project_id must be cropintel-home');"
+      - name: Deploy Firebase Hosting preview
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME }}
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-service-account.json"
+          npx firebase-tools@15.22.1 hosting:channel:deploy "pr-${{ github.event.pull_request.number }}" --project cropintel-home --expires 7d
