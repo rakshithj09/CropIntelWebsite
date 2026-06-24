@@ -5,7 +5,7 @@ Public website for CropIntel, built with Next.js 14, React, TypeScript, Tailwind
 Live site:
 
 ```text
-https://cropintel.web.app
+https://cropintel-home.web.app/
 ```
 
 ## Overview

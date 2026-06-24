@@ -1,24 +1,17 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { PageShell, SectionHeader } from '@/components/PublicSite'
+import { PageHero, PageShell, SectionHeader } from '@/components/PublicSite'
 import { platformStats, workflow } from '@/lib/siteContent'
 
 export default function HowItWorksPage() {
   return (
     <PageShell>
       <main>
-        <section className="border-b border-stone-200 bg-[#ede5d4]">
-          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-900">How it works</p>
-            <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-slate-950">
-              From leaf image to disease guidance
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-              CropIntel uses crop-specific EfficientNet and TensorFlow Lite inference paths to turn field photos into
-              structured prediction results and practical guidance.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="How it works"
+          title="From leaf image to disease guidance"
+          text="CropIntel uses crop-specific EfficientNet and TensorFlow Lite inference paths to turn field photos into structured prediction results and practical guidance."
+        />
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
           <SectionHeader title="Crop intelligence workflow" text="CropIntel is designed as a mobile-first field workflow for crop health review, guidance, and outbreak awareness." />
@@ -27,7 +20,7 @@ export default function HowItWorksPage() {
               <div key={title} className="field-card p-6">
                 <div className="flex items-center justify-between">
                   <Icon className="h-6 w-6 text-primary-800" />
-                  <span className="text-sm font-bold text-[#9a6b28]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-sm font-bold text-[#986b2a]">{String(index + 1).padStart(2, '0')}</span>
                 </div>
                 <h2 className="mt-5 text-xl font-semibold">{title}</h2>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
@@ -36,7 +29,7 @@ export default function HowItWorksPage() {
           </div>
         </section>
 
-        <section className="field-band border-y border-stone-200 py-20">
+        <section className="field-band border-y border-white/70 py-20">
           <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr]">
             <SectionHeader
               eyebrow="Technology"

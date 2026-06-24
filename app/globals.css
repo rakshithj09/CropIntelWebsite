@@ -13,9 +13,10 @@
 body {
   color: rgb(var(--foreground-rgb));
   background:
-    radial-gradient(1200px 600px at 20% 0%, rgba(112, 152, 112, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(120, 160, 120, 0.16), transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #f1f5f9 100%);
+    radial-gradient(1000px 520px at 50% -10%, rgba(56, 84, 56, 0.2), transparent 58%),
+    radial-gradient(700px 420px at 8% 8%, rgba(214, 164, 65, 0.14), transparent 58%),
+    radial-gradient(760px 460px at 92% 20%, rgba(112, 152, 112, 0.2), transparent 60%),
+    linear-gradient(180deg, #fbf8ef 0%, #f7f3e8 48%, #edf3ea 100%);
   min-height: 100vh;
   min-height: 100dvh;
   overflow-x: hidden;
@@ -28,7 +29,6 @@ img {
   display: block !important;
   max-width: 100%;
   height: auto;
-  object-fit: contain;
 }
 
 /* Prevent images from showing as broken icons */
@@ -39,18 +39,35 @@ img:not([src]) {
 
 @layer utilities {
   .btn-primary {
-    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-primary-800 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-400;
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-primary-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[0_24px_70px_rgba(47,69,47,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-800 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-400;
   }
 
   .btn-secondary {
-    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-800 shadow-sm transition hover:border-primary-700 hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2;
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-[#d6a441]/35 bg-[#fffaf0]/70 px-5 py-2.5 text-sm font-semibold text-primary-900 shadow-sm shadow-[0_10px_35px_rgba(47,69,47,0.06)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-[#d6a441]/65 hover:bg-white focus:outline-none focus:ring-2 focus:ring-primary-800 focus:ring-offset-2;
   }
 
   .field-card {
-    @apply rounded-[1.25rem] border border-stone-200 bg-white/85 shadow-sm;
+    @apply rounded-[1.25rem] border border-[#dfe8d8]/80 bg-[#fffdf7]/[0.68] shadow-[0_20px_70px_rgba(47,69,47,0.09)] backdrop-blur-2xl;
   }
 
   .field-band {
-    background: linear-gradient(180deg, rgba(249, 247, 239, 0.95), rgba(249, 247, 239, 0.98));
+    background:
+      radial-gradient(760px 360px at 50% 0%, rgba(214, 164, 65, 0.14), transparent 62%),
+      linear-gradient(180deg, rgba(255, 250, 240, 0.52), rgba(239, 246, 235, 0.8));
+  }
+
+  .page-hero {
+    @apply relative overflow-hidden border-b border-[#dfe8d8]/80;
+    background:
+      radial-gradient(720px 320px at 50% 0%, rgba(56, 84, 56, 0.18), transparent 64%),
+      radial-gradient(520px 280px at 80% 10%, rgba(214, 164, 65, 0.14), transparent 70%),
+      linear-gradient(180deg, rgba(255, 252, 245, 0.78), rgba(241, 247, 237, 0.7));
+  }
+
+  .subtle-grid {
+    background-image:
+      linear-gradient(rgba(47, 69, 47, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(214, 164, 65, 0.055) 1px, transparent 1px);
+    background-size: 44px 44px;
   }
 }

@@ -1,33 +1,25 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { PageShell, SectionHeader } from '@/components/PublicSite'
+import { PageHero, PageShell, SectionHeader } from '@/components/PublicSite'
 import { crops, features, productCapabilities } from '@/lib/siteContent'
 
 export default function ProductPage() {
   return (
     <PageShell>
       <main>
-        <section className="border-b border-stone-200 bg-[#ede5d4]">
-          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-900">Product</p>
-            <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-slate-950">
-              A crop disease intelligence platform for field teams
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-              CropIntel brings image-based disease prediction, treatment guidance, outbreak reporting, history, and
-              regional context into a mobile-first product experience.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/download" className="btn-primary">
-                Download app
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/contact" className="btn-secondary">
-                Contact us
-              </Link>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Product"
+          title="A crop disease intelligence platform for field teams"
+          text="CropIntel brings image-based disease prediction, treatment guidance, outbreak reporting, history, and regional context into a mobile-first product experience."
+        >
+          <Link href="/download" className="btn-primary">
+            Download app
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/contact" className="btn-secondary">
+            Contact us
+          </Link>
+        </PageHero>
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
           <SectionHeader title="What the platform includes" text="This company website introduces the CropIntel platform while the iOS app is prepared for App Store release." />
@@ -42,13 +34,13 @@ export default function ProductPage() {
           </div>
         </section>
 
-        <section className="field-band border-y border-stone-200 py-20">
+        <section className="field-band border-y border-white/70 py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <SectionHeader eyebrow="Capabilities" title="Designed for repeatable crop health workflows" />
             <div className="mt-10 grid gap-3 md:grid-cols-2">
               {features.map((feature) => (
-                <div key={feature} className="flex gap-3 rounded-2xl bg-white p-4 shadow-sm">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary-800" />
+                <div key={feature} className="field-card flex gap-3 p-4">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#986b2a]" />
                   <p className="text-sm leading-6 text-slate-700">{feature}</p>
                 </div>
               ))}

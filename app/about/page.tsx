@@ -1,19 +1,11 @@
-import { PageShell, SectionHeader } from '@/components/PublicSite'
+import { PageHero, PageShell, SectionHeader } from '@/components/PublicSite'
 import { company, faqs, values } from '@/lib/siteContent'
 
 export default function AboutPage() {
   return (
     <PageShell>
       <main>
-        <section className="border-b border-stone-200 bg-[#ede5d4]">
-          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-900">About CropIntel</p>
-            <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-slate-950">
-              Practical intelligence for healthier fields
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">{company.overview}</p>
-          </div>
-        </section>
+        <PageHero eyebrow="About CropIntel" title="Practical intelligence for healthier fields" text={company.overview} />
 
         <section className="mx-auto grid max-w-7xl gap-6 px-5 py-20 sm:px-8 lg:grid-cols-2">
           <div className="field-card p-8">
@@ -26,7 +18,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="field-band border-y border-stone-200 py-20">
+        <section className="field-band border-y border-white/70 py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <SectionHeader eyebrow="Values" title="Built for agriculture, not generic software" />
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">

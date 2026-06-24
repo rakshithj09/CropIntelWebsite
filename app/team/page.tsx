@@ -1,24 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { PageShell, SectionHeader } from '@/components/PublicSite'
+import { PageHero, PageShell, SectionHeader } from '@/components/PublicSite'
 import { team } from '@/lib/siteContent'
 
 export default function TeamPage() {
   return (
     <PageShell>
       <main>
-        <section className="border-b border-stone-200 bg-[#ede5d4]">
-          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-900">Team</p>
-            <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-slate-950">
-              The students building CropIntel
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-              CropIntel is developed by a student team focused on practical crop disease detection, mobile workflows,
-              and agricultural intelligence tools.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Team"
+          title="The students building CropIntel"
+          text="CropIntel is developed by a student team focused on practical crop disease detection, mobile workflows, and agricultural intelligence tools."
+        />
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
           <SectionHeader
@@ -29,7 +22,7 @@ export default function TeamPage() {
             {team.map((member) => (
               <article key={member.name} className="field-card p-7">
                 <div className="flex h-full items-start gap-5">
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-stone-200 bg-primary-50 shadow-sm">
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-white/80 bg-primary-50 shadow-sm">
                     <Image
                       src={member.image}
                       alt={member.name}
