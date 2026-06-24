@@ -21,9 +21,9 @@
   --color-grad-2: #cce2dd; /* soft mist wash */
   --color-grad-3: #ecdcc2; /* warm sand wash */
 
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Satoshi", var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-space), ui-monospace, monospace;
+  --font-display: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --radius-card: 20px;
 }
