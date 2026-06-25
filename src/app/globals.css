@@ -147,6 +147,20 @@ body {
   transform: translateY(0);
 }
 
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.reveal-rise {
+  animation: reveal-rise 0.6s ease-out both;
+}
+
 /* ---- Large blurred gradient blobs sitting BEHIND glass ---- */
 .blob {
   position: absolute;
@@ -266,6 +280,7 @@ body.cursor-field-active [role="button"] {
     scroll-behavior: auto;
   }
   .shimmer,
+  .reveal-rise,
   .scan-sweep-line,
   .floaty,
   .scan-card:hover .scanline {
