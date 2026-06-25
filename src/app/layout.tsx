@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "CropIntel",
   description:
-    "Take a photo of a leaf and get an instant disease diagnosis, severity rating, and treatment recommendation.",
+    "Take a clear photo of an affected leaf and get a likely match, leaf damage estimate, and practical next steps.",
 };
 
 export default function RootLayout({

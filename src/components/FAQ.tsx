@@ -37,7 +37,7 @@ export default function FAQ() {
         <div className="flex flex-col items-center text-center">
           <span className="eyebrow mb-5">FAQ</span>
           <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-ink">
-            Questions, answered.
+            What growers need to know.
           </h2>
         </div>
 

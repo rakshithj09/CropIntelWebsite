@@ -13,8 +13,8 @@ import CountUp from "./CountUp";
  *  - TODO: add real on-device inference time (ms) once measured.
  */
 const STATS = [
-  { value: "96%", label: "Mean validation accuracy", sub: "across 4 measured crops" },
-  { value: "25", label: "Diseases detected", sub: "plus a healthy baseline" },
+  { value: "96%", label: "Image test accuracy", sub: "across 4 measured crops" },
+  { value: "25", label: "Leaf disease types recognized", sub: "plus a healthy baseline" },
   { value: "5", label: "Crops supported", sub: "corn · soybean · wheat · rice · tomato" },
 ];
 
@@ -25,7 +25,7 @@ export default function Stats() {
         <Reveal className="mb-12 text-center">
           <span className="eyebrow">Accuracy</span>
           <h2 className="mx-auto mt-5 max-w-2xl font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
-            Tested, measured, and honest about it.
+            Built on measured results. Clear about limits.
           </h2>
         </Reveal>
 

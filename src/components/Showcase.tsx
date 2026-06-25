@@ -6,20 +6,20 @@ const CARDS = [
     icon: WifiOff,
     wash: "from-grad-1/70",
     title: "Works offline",
-    body: "Diagnose crops anywhere, even without internet. ",
+    body: "Use it in the field, even where cell service drops out.",
   },
   {
     icon: Gauge,
     wash: "from-grad-3/70",
     title: "Severity tracking",
-    body: "Know how serious the infection is and prioritize treatment.",
+    body: "See how much of the photographed leaf appears affected and decide which fields need a closer look.",
     accent: true,
   },
   {
     icon: Sprout,
     wash: "from-grad-2/70",
     title: "Recommended actions",
-    body: "Get clear guidance on what to do next.",
+    body: "Get a practical checklist before you call an agronomist, scout another area, or consider treatment.",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function Showcase() {
         <Reveal>
           <span className="eyebrow mb-5">Why CropIntel</span>
           <h2 className="max-w-2xl font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
-            More than disease detection.
+            Built for field decisions.
           </h2>
         </Reveal>
 

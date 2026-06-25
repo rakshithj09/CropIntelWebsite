@@ -15,13 +15,13 @@ export default function Hero() {
         <Reveal>
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/60 px-3 py-1 font-mono text-xs uppercase tracking-widest text-ink-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-leaf" />
-            Crop disease, diagnosed on your phone
+            Know what is affecting your crop before you act.
           </p>
           <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-extrabold leading-[0.98] tracking-[-0.02em] text-ink">
-            Take a photo of a leaf.
+            Take a clear photo of an affected leaf.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            CropIntel identifies the disease, estimates severity, and recommends what to do next, even without internet.
+            CropIntel helps you identify likely leaf disease symptoms, estimate how much of the leaf is affected, and decide what to check next, even with no signal.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a

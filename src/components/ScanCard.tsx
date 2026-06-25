@@ -138,7 +138,7 @@ export default function ScanCard() {
       >
         <Check className="mt-0.5 h-4 w-4 shrink-0 text-leaf" strokeWidth={2.5} />
         <p className="text-sm leading-snug text-ink-soft">
-          Southern Rust detected. Moderate severity. Apply a foliar fungicide soon.
+          Possible Southern Rust. Moderate leaf damage detected. Check crop stage, field history, weather, and local guidance before treatment.
         </p>
       </motion.div>
     </motion.div>

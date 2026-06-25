@@ -8,19 +8,19 @@ const STEPS = [
     n: "01",
     icon: Camera,
     title: "Take a photo",
-    body: "Capture one affected leaf in clear lighting",
+    body: "Photograph one affected leaf in good daylight.",
   },
   {
     n: "02",
     icon: ScanLine,
     title: "Analyze",
-    body: "CropIntel checks the image directly on your device",
+    body: "CropIntel compares the leaf photo with known crop disease symptoms on your phone.",
   },
   {
     n: "03",
     icon: ClipboardCheck,
     title: "Results",
-    body: "View the disease, severity, confidence score, and recommended action.",
+    body: "Review the likely issue, leaf damage estimate, match confidence, and next steps to consider.",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function HowItWorks() {
         <Reveal>
           <span className="eyebrow mb-5">How it works</span>
           <h2 className="max-w-2xl font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
-            From a sick plant to a plan, in three steps.
+            From a leaf photo to your next field check.
           </h2>
         </Reveal>
 
