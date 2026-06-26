@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const APP_URL = "https://cropintel-us.vercel.app";
@@ -21,7 +22,7 @@ export default function Nav() {
           scrolled ? "glass" : "border border-transparent"
         }`}
       >
-        <a href="#top" className="flex items-center gap-2">
+        <Link href="/#top" className="flex items-center gap-2">
           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-leaf">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -33,18 +34,18 @@ export default function Nav() {
           <span className="font-display text-lg font-extrabold tracking-tight text-ink">
             CropIntel
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#how" className="text-sm font-medium text-ink-soft transition-colors hover:text-ink">
+          <Link href="/#how" className="text-sm font-medium text-ink-soft transition-colors hover:text-ink">
             How it works
-          </a>
-          <a href="#accuracy" className="text-sm font-medium text-ink-soft transition-colors hover:text-ink">
+          </Link>
+          <Link href="/#accuracy" className="text-sm font-medium text-ink-soft transition-colors hover:text-ink">
             Accuracy
-          </a>
-          <a href="#faq" className="text-sm font-medium text-ink-soft transition-colors hover:text-ink">
+          </Link>
+          <Link href="/#faq" className="text-sm font-medium text-ink-soft transition-colors hover:text-ink">
             FAQ
-          </a>
+          </Link>
         </div>
 
         <a

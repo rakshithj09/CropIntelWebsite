@@ -28,11 +28,8 @@ export default function CountUp({
   const [n, setN] = useState(0);
 
   useEffect(() => {
-    if (!numeric) return;
-    if (!inView || reduce) {
-      setN(target);
-      return;
-    }
+    if (!numeric || !inView || reduce) return;
+
     let raf = 0;
     let start = 0;
     const dur = 1100;
@@ -57,10 +54,12 @@ export default function CountUp({
     );
   }
 
+  const displayValue = reduce ? target : n;
+
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {n}
+      {displayValue}
       {suffix}
     </span>
   );

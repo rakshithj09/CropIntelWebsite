@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const APP_URL = "https://cropintel-us.vercel.app";
 
 const COLUMNS = [
@@ -5,22 +7,22 @@ const COLUMNS = [
     heading: "Product",
     links: [
       { label: "Try the scanner", href: APP_URL },
-      { label: "How it works", href: "#how" },
-      { label: "Accuracy", href: "#accuracy" },
+      { label: "How it works", href: "/#how" },
+      { label: "Accuracy", href: "/#accuracy" },
     ],
   },
   {
     heading: "Resources",
     links: [
       { label: "Product overview", href: APP_URL },
-      { label: "FAQ", href: "#faq" },
+      { label: "FAQ", href: "/#faq" },
       { label: "Support", href: "mailto:support@cropintel.app" },
     ],
   },
   {
     heading: "Legal",
     links: [
-      { label: "Privacy", href: "#" },
+      { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "#" },
       { label: "Proprietary notice", href: "#" },
     ],
@@ -56,16 +58,25 @@ export default function Footer() {
               {col.heading}
             </p>
             <ul className="mt-4 space-y-2.5">
-              {col.links.map((l) => (
-                <li key={l.label}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-ink-soft transition-colors hover:text-ink"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
+              {col.links.map((l) => {
+                const className =
+                  "text-sm text-ink-soft transition-colors hover:text-ink";
+                const isInternal = l.href.startsWith("/");
+
+                return (
+                  <li key={l.label}>
+                    {isInternal ? (
+                      <Link href={l.href} className={className}>
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a href={l.href} className={className}>
+                        {l.label}
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ))}

@@ -51,8 +51,10 @@ Use `npm run build:hosting` when deploying to Firebase Hosting static site.
 
 ## Environment and secrets
 
-- The app loads environment variables from `.env.local` when present. Do not commit secret keys.
-- CI deploy uses a service account JSON stored in the repository secrets (example name used in workflows: `FIREBASE_SERVICE_ACCOUNT_CROPINTEL_AE842`).
+- This static website does not require runtime secrets to build or run.
+- Use `.env.example` as the template for local values. Keep real values in `.env.local` or a deployment secret store, and do not commit secret keys.
+- Public frontend variables such as `NEXT_PUBLIC_*` are visible in browser source and network traffic. Do not put private API keys, model tokens, Firebase Admin credentials, or service account JSON in public variables.
+- CI deploy uses a service account JSON stored in the repository secrets. The current workflows expect `FIREBASE_SERVICE_ACCOUNT_CROPINTEL_HOME`.
 - To create a service account key and add it as a GitHub secret:
 
 ```bash
@@ -69,6 +71,34 @@ gh secret set FIREBASE_SERVICE_ACCOUNT_<UPPER_PROJECT_ID> -b key.json
 ```
 
 Replace `<PROJECT_ID>` with the Firebase project id and `<UPPER_PROJECT_ID>` with the same id uppercased (or the secret name you use in workflows).
+
+## Security and API protection
+
+This repository is a static public website. It does not contain API routes, auth
+handlers, Firestore access, image upload handlers, model calls, or rate-limited
+backend endpoints. The scanner linked from the site is served separately at
+`https://cropintel-us.vercel.app`; its backend must enforce the protections
+below.
+
+- Keep private API keys, model tokens, Firebase Admin credentials, and service
+  account files on the server side only.
+- Validate all server inputs with allowlist schemas.
+- Enforce ownership checks before reading, editing, or deleting accounts, farms,
+  diagnoses, uploaded photos, and user records.
+- Rate-limit costly or abuse-prone routes by authenticated user ID and IP
+  address, especially diagnosis, image upload, login, signup, password reset,
+  and AI/model endpoints.
+- Reject uploads that exceed configured payload limits or do not match allowed
+  image MIME types, signatures, extensions, and dimensions.
+- Return clear `429` and validation responses without stack traces, provider
+  errors, tokens, prompts, bucket paths, or internal implementation details.
+- Keep uploaded crop images in private storage unless a specific object is
+  intentionally public.
+- Use CSRF protection for cookie-authenticated state-changing requests.
+
+Firebase Hosting security headers are configured in `firebase.json`. Review
+those headers after any change that adds external scripts, styles, images, or
+API connections.
 
 ## Firebase Hosting — configure & deploy
 
